@@ -8,6 +8,9 @@ class BlackCard extends Component {
       card: {}
     }
   }
+  componentDidMount() {
+    this.populateBlackCard();
+  }
 
   populateBlackCard() {
     //TODO: get cards from database

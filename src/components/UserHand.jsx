@@ -6,18 +6,18 @@ import WhiteCard from './WhiteCard';
 
 class UserHand extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       cards: [],
-      CARDS_PER_PLAYER: 5
+      CARDS_PER_PLAYER: 5,
+      username: this.props.username,
+      points: 0
     }
   }
-
   componentDidMount() {
     this.populateHand();
   }
-
   populateHand(){
     //TODO: populate this arry by pulling from database
     var whiteCards = [
@@ -70,7 +70,7 @@ class UserHand extends Component {
   render(){
     return(
       <div>
-        <h2>The Answers:</h2>
+        <h2>{this.state.username}'s Answers</h2><p>Points: {this.state.points}</p>
         <div className="row">
           {this.results()}
         </div>
