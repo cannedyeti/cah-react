@@ -57,16 +57,14 @@ class UserHand extends Component {
 
 
   shuffleArray(arr, limit) {
-   if(limit > arr.length) {
-     limit = arr.length;
-   }
-   var shuffled = arr.sort(function() {
-     return 0.5 - Math.random();
-   });
-   return shuffled.slice(0, limit);
+    if(limit > arr.length) {
+      limit = arr.length;
+    }
+    var shuffled = arr.sort(function() {
+      return 0.5 - Math.random();
+    });
+    return shuffled.slice(0, limit);
   }
-
-
   render(){
     return(
       <div>
@@ -81,6 +79,7 @@ class UserHand extends Component {
   results(){
     return this.state.cards.map( card =>
       <WhiteCard answer={card.answer}
+                  username = {this.state.username}
       />
     )
   }
